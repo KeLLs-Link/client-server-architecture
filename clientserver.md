@@ -8,8 +8,8 @@ Server A name - `mysql server``
 
 Server B name - `mysql client`
 ```
-![screenshot](./screenshot/mysqlclients.png)
-![screenshot](./screenshot/mysqlserverinstance.png)
+![screenshot](./screenshot/serverandclient.png)
+
 
 On `mysql server` , install MySQL Server software.
 ```
@@ -19,13 +19,13 @@ sudo apt install mysql-server
 
 ![screenshot](./screenshot/statusrunning.png)
 
-Verify that mysql-client is installed
+Verify that `mysql-client` is installed
 ```
 dpkg -l | grep mysql-client
 ```
 ![screenhot](./screenshot/mysqlclientverified.png)
 
-Verify that mysql-server is installed
+Verify that `mysql-server` is installed
 ```
 dpkg -l | grep mysql-server
 ```
