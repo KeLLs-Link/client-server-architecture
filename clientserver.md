@@ -31,3 +31,7 @@ dpkg -l | grep mysql-server
 ```
 ![screenshot](./screenshot/mysqlserverconfirmed.png)
 
+**`MySQL server`** uses TCP port 3306 as it's default port so you will have to open this port by allowing an Inbound rule in mysql server Security Group.
+
+![image](./screenshot/mysql-server-port.png)
+
