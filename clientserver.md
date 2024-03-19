@@ -48,5 +48,17 @@ Configure MySQL server to allow connections from remote hosts
 ```
 sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
 ```
+Replace the bind address
 
-sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+```
+127.0.0.1 
+```
+![image](./screenshot/bindadress.png)
+with
+```
+0.0.0.0
+```
+![image](./screenshot/bindaddressedited.png)
+
+save and exit your command line code editor
+
