@@ -104,6 +104,11 @@ mysql -u example_user -p
 
 The `-p` flag in the command above prompts you to input the password you used whn creating the example_user 
 
+Restart your mysql server and ensure its running
+```
+sudo systemctl restart mysql
+sudo systemctl status mysql.service
+```
 
 
 **`MySQL server`** uses TCP port `3306` as it's default port so you will have to open this port by allowing an Inbound rule in mysql server Security Group.
