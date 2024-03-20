@@ -15,6 +15,14 @@ On `mysql server` , install MySQL Server software.
 ```
 sudo apt install mysql-server
 ```
+Start mysql server
+```
+sudo systemctl start mysql.service
+```
+Ensure that the server is running using the systemctl command:
+```
+sudo systemctl status mysql.service
+```
 ![image](./screenshot/mysqlserver.png)
 
 ![screenshot](./screenshot/statusrunning.png)
@@ -60,5 +68,11 @@ with
 ```
 ![image](./screenshot/bindaddressedited.png)
 
-save and exit your command line code editor
+save and exit your command line code editor.
+
+From `mysql client` Linux Server, connect remotely to mysql server Database Engine without using SSH. You must use the `mysql utility` to perform this action.
+
+Check that you have successfully connected to a remote MySQL server and can perform SQL queries:
+
+GRANT ALL PRIVILEGES ON database_name.* TO 'username'@'client_ip' IDENTIFIED BY 'password';
 
