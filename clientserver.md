@@ -47,6 +47,55 @@ rpm -qa | grep mysql-client
 
 ![screenshot](./screenshot/mysqlserverconfirmed.png)
 
+
+ ## **Configure mysql server**
+
+```
+sudo mysql
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'PassWord.1';
+```
+Run a MySQL secure installation
+```
+sudo mysql_secure_installation
+```
+![image](./screenshot/mysqldbconfigured.png)
+
+In the `MySQL server`, create a user and a database named first_db and a user named first_user, but you can replace these names with different values.
+
+First, connect to the MySQL console using the root account:
+```
+sudo mysql -p
+```
+
+Create a new database by running this command from your MySQL console:
+```
+CREATE DATABASE example_database;
+```
+
+Create a new user and grant full privileges on the database we have just created.
+```
+CREATE USER 'example_user'@'%' IDENTIFIED WITH mysql_native_password BY 'PassWord';
+```
+
+N/B: The following command above creates a new user named `example_user`, using mysql_native_password as default authentication method. We’re defining this user’s password as password, but you should replace this value with a secure password of your own choosing.
+
+Give this user permission over the example_database database:
+```
+GRANT ALL ON example_database.* TO 'example_user'@'%';
+```
+
+![image](./screenshot/configuredmysqluser.png)
+
+exit mysql console with the following command:
+```
+exit
+or type
+\q
+```
+bye 😄
+
+
+
 **`MySQL server`** uses TCP port `3306` as it's default port so you will have to open this port by allowing an Inbound rule in mysql server Security Group.
 
 ![image](./screenshot/mysql-server-port.png)
