@@ -94,6 +94,16 @@ or type
 ```
 bye 😄
 
+***Note: This will give the example_user user full privileges over the example_database database, while preventing this user from creating or modifying other databases on your server.***
+
+Test if the new user has the proper permissions by logging in to the MySQL console again, this time using the custom user credentials:
+```
+mysql -u example_user -p
+```
+![image](./screenshot/configfinished.png)
+
+The `-p` flag in the command above prompts you to input the password you used whn creating the example_user 
+
 
 
 **`MySQL server`** uses TCP port `3306` as it's default port so you will have to open this port by allowing an Inbound rule in mysql server Security Group.
