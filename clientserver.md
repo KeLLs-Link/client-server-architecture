@@ -152,7 +152,3 @@ type the ***show databases;*** command and the example database should be availa
 ![image](./screenshot/completed.png)
 
 
-
-
-GRANT ALL PRIVILEGES ON database_name.* TO 'username'@'client_ip' IDENTIFIED BY 'password';
-
