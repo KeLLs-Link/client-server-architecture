@@ -33,9 +33,9 @@ Verify that `mysql-client and server` are installed
 dpkg -l | grep mysql-client
 dpkg -l | grep mysql-server
 ```
-The above comands are for  command in Debian-based distributions like Ubuntu.
+The above comands are for Debian-based distributions like Ubuntu.
 
-If you're using a different package management system or distribution, such as CentOS or Fedora, you may need to use different command
+If you're using a different package management system or distribution, such as CentOS or Fedora, you may need to use different command as shown below.
 
 ```
 rpm -qa | grep mysql-server
@@ -48,7 +48,7 @@ rpm -qa | grep mysql-client
 ![screenshot](./screenshot/mysqlserverconfirmed.png)
 
 
- ## **Configure mysql server**
+ - ## **Configure mysql server**
 
 ```
 sudo mysql
@@ -62,12 +62,12 @@ sudo mysql_secure_installation
 
 In the `MySQL server`, create a user and a database named first_db and a user named first_user, but you can replace these names with different values.
 
-First, connect to the MySQL console using the root account:
+First, connect to the MySQL console using the root account
 ```
 sudo mysql -p
 ```
 
-Create a new database by running this command from your MySQL console:
+Create a new database by running this command in your MySQL console:
 ```
 CREATE DATABASE example_database;
 ```
@@ -107,15 +107,15 @@ SHOW DATABASES;
 ```
 ![image](./screenshot/configfinished.png)
 
-The `-p` flag in the command above prompts you to input the password you used whn creating the example_user 
+The `-p` flag in the command above prompts you to input the password you used when creating the example_user. 
 
-Restart your mysql server and ensure its running
+Restart your mysql server and ensure its running.
 ```
 sudo systemctl restart mysql
 sudo systemctl status mysql.service
 ```
 
-**`MySQL server`** uses TCP port `3306` as it's default port so you will have to open this port by allowing an Inbound rule in mysql server Security Group.
+**`MySQL server`** uses TCP port `3306` as it's default port so you will have to open this port by allowing an Inbound rule in your security group.
 
 ![image](./screenshot/mysql-server-port.png)
 
@@ -124,6 +124,8 @@ Configure MySQL server to allow connections from remote hosts
 ```
 sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
 ```
+You can open the above command using your favourite command line editor.
+
 Replace the bind address
 
 ```
@@ -140,7 +142,7 @@ save and exit your command line code editor.
 
 From `mysql client` Linux Server, connect remotely to mysql server Database Engine without using SSH. You must use the `mysql utility` to perform this action.
 
-use the command below and onnect remotely to `mysql-server` from `mysql-client` and perform sql queries.
+use the command below to onnect remotely to `mysql-server` from `mysql-client` machine and perform sql queries.
 
 N/B: replace the Ip address with the Privte ip address of your server.
 ```
@@ -148,6 +150,9 @@ sudo mysql -u example_user -h 172.31.6.225 -p
 ```
 
 type the ***show databases;*** command and the example database should be available.
+```
+show databases;
+```
 
 ![image](./screenshot/completed.png)
 
