@@ -3,6 +3,8 @@
 ![image](./screenshot/clientserverarchitecture.png)
 - **This project is deployed on AWS Cloud**
 
+Let's Begin 👍
+
 Privission two Linux-based virtual servers (EC2 instances in AWS).
 
 ```
@@ -158,4 +160,9 @@ show databases;
 
 ![image](./screenshot/completed.png)
 
+Congratulations 👍
+
+- Clean up
+
+Do not forget to stop or terminate your EC2 Instances (Client and Server machines) in order not to incure charges.
 
