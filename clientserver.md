@@ -1,5 +1,7 @@
 ### Client-Server-Architecture Implementation:
-- **This project will be deployed on AWS Cloud**
+
+![image](./screenshot/clientserverarchitecture.png)
+- **This project is be deployed on AWS Cloud**
 
 Privission two Linux-based virtual servers (EC2 instances in AWS).
 
