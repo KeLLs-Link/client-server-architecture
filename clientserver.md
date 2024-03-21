@@ -100,6 +100,11 @@ Test if the new user has the proper permissions by logging in to the MySQL conso
 ```
 mysql -u example_user -p
 ```
+confirm access to the database
+
+```
+SHOW DATABASES;
+```
 ![image](./screenshot/configfinished.png)
 
 The `-p` flag in the command above prompts you to input the password you used whn creating the example_user 
@@ -109,7 +114,6 @@ Restart your mysql server and ensure its running
 sudo systemctl restart mysql
 sudo systemctl status mysql.service
 ```
-
 
 **`MySQL server`** uses TCP port `3306` as it's default port so you will have to open this port by allowing an Inbound rule in mysql server Security Group.
 
@@ -136,7 +140,19 @@ save and exit your command line code editor.
 
 From `mysql client` Linux Server, connect remotely to mysql server Database Engine without using SSH. You must use the `mysql utility` to perform this action.
 
-Check that you have successfully connected to a remote MySQL server and can perform SQL queries:
+use the command below and onnect remotely to `mysql-server` from `mysql-client` and perform sql queries.
+
+N/B: replace the Ip address with the Privte ip address of your server.
+```
+sudo mysql -u example_user -h 172.31.6.225 -p
+```
+
+type the ***show databases;*** command and the example database should be available.
+
+![image](./screenshot/completed.png)
+
+
+
 
 GRANT ALL PRIVILEGES ON database_name.* TO 'username'@'client_ip' IDENTIFIED BY 'password';
 
